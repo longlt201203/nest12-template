@@ -1,0 +1,13 @@
+echo "Formatting"
+bun run format
+echo "Done formatting"
+
+echo "Linting"
+bun run lint
+echo "Done linting"
+
+echo "Building"
+bun run build
+echo "Done building"
+
+git add .
