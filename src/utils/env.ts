@@ -13,7 +13,7 @@ const EnvSchema = z.object({
   DB_NAME: z.string(),
   DB_LOGGING: z.union([z.literal('all'), z.boolean()]),
   FE_URL: z.string(),
-  ENABLE_SWAGGER: z.boolean(),
+  ENABLE_SWAGGER: z.coerce.boolean(),
 });
 
 type EnvType = z.infer<typeof EnvSchema>;
