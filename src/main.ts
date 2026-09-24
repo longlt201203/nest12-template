@@ -16,7 +16,9 @@ async function bootstrap() {
       credentials: true,
     },
   });
-  initSwagger(app);
+  if (Env.ENABLE_SWAGGER) {
+    initSwagger(app);
+  }
   const clsService = app.get(ClsService<RequestContext>);
   app.useGlobalInterceptors(
     new RequestContextInterceptor(clsService),
